@@ -15,9 +15,8 @@ app.use("/", (req, res) => {
 });
 
 // Database Connection URL
-const db =
-  "mongodb+srv://EKaxada:1234567890@cluster0.3bhqr.mongodb.net/EKaxada?retryWrites=true&w=majority" ||
-  "mongodb://localhost:27017/mernSimpleSetup";
+const db = process.env.MONGO_URI || "mongodb://localhost:27017/homeschoolAPI";
+// Use connect method to connect to the server
 mongoose
   .connect(db, {
     useNewUrlParser: true,
