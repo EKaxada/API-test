@@ -16,7 +16,8 @@ app.use("/", (req, res) => {
 
 // Database Connection URL
 const db =
-  "mongodb+srv://EKaxada:1234567890@cluster0.3bhqr.mongodb.net/EKaxada?retryWrites=true&w=majority";
+  "mongodb+srv://EKaxada:1234567890@cluster0.3bhqr.mongodb.net/EKaxada?retryWrites=true&w=majority" ||
+  "mongodb://localhost:27017/mernSimpleSetup";
 mongoose
   .connect(db, {
     useNewUrlParser: true,
