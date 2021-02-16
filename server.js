@@ -8,11 +8,11 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use("/users", userRoutes);
 
-app.use("/", (req, res) => {
+app.use("/api", (req, res) => {
   res.status(200).json({ api: "version 1" });
 });
+app.use("/users", userRoutes);
 
 // Database Connection URL
 const db = process.env.MONGO_URI || "mongodb://localhost:27017/homeschoolAPI";
